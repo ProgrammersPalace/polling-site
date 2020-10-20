@@ -23,4 +23,7 @@ In the dev-event-pilot folder, locate the `frontend` folder and cd into it. Run 
 ## Development workflow
 
 ### Start the front end
-In the `frontend` folder run `ng serve` to start the frontend. Once the app is started, you can open a browser and go to `localhost:4200` to see the app. 
+In the `frontend` folder, run `ng serve` to start the frontend. Once the app is started, you can open a browser and go to `localhost:4200` to see the app. 
+
+### Start the back end
+In the `backend` folder, run `npm run start` to start the backend. Once the backend is started, you can access the api at `localhost:3000`. 
