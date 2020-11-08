@@ -9,7 +9,7 @@ import { PollService } from '../poll.service';
 })
 export class PollsListComponent implements OnInit {
 
-  private polls: Poll[];
+  polls: Poll[];
 
   constructor(private pollService: PollService) { }
 
