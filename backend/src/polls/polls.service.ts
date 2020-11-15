@@ -1,8 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { Poll } from './interfaces/poll.interface';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Poll } from './entities/poll.entity';
 
 @Injectable()
 export class PollsService {
+    /*
     private polls: Poll[] = [
         {
             questionAsked: "Is this a poll?",
@@ -17,8 +20,14 @@ export class PollsService {
             dateCreated: new Date(),
         }
     ];
+    */
 
-    findAll(): Poll[] {
-        return this.polls;
+    constructor(
+        @InjectRepository(Poll) private pollRepository: Repository<Poll>
+    ) {}
+
+    async findAll(): Promise<Poll[]> {
+        return await this.pollRepository.find();
     }
+
 }
