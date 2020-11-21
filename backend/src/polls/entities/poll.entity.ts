@@ -1,15 +1,15 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn } from 'typeorm';
 
 
 @Entity()
 export class Poll {
 
-    @PrimaryGeneratedColumn()
-    id: number;
+    @PrimaryGeneratedColumn("uuid")
+    id: string;
 
     @Column('text')
     questionAsked: string;
 
-    @Column('timestamp')
+    @CreateDateColumn()
     created: Date;
 }
